@@ -232,10 +232,14 @@ def reflectorSetup():
 	return reflector
 	
 def encryption(letter, setup, startPoints, reflector, plugboard, first):
-	if letter in plugboard[0] or letter in plugboard[1]:
+	if letter in plugboard[0]:
 		index = plugboard[0].index(letter)
 		letter = plugboard[1][index]
+	elif letter in plugboard[1]:
+		index = plugboard[1].index(letter)
+		letter = plugboard[0][index]
 	print("After plugboard: " + letter)
+
 	z = 0
 	for rotor in setup:
 		letter = rotor(letter, startPoints[z], first, True)
@@ -243,9 +247,13 @@ def encryption(letter, setup, startPoints, reflector, plugboard, first):
 	letter = reflector(letter)
 	for rotor in setup[::-1]:
 		letter = rotor(letter, None, None, False)
-	if letter in plugboard[0] or letter in plugboard[1]:
+		
+	if letter in plugboard[0]:
 		index = plugboard[0].index(letter)
 		letter = plugboard[1][index]
+	elif letter in plugboard[1]:
+		index = plugboard[1].index(letter)
+		letter = plugboard[0][index]
 	print("Final encryption: " + letter)
 	
 def main():
