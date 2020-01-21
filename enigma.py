@@ -20,7 +20,7 @@ def rotor1(letter, startPoint, first, forward):
 	index = connections[0].index(letter)
 	index = (index - route1) % 26
 	letter = connections[1][index]
-	print(letter)
+	print("After rotor 1: " + letter)
 	return letter
 
 def rotor2(letter, startPoint, first, forward):
@@ -34,7 +34,7 @@ def rotor2(letter, startPoint, first, forward):
 	index = connections[0].index(letter)
 	index = (index - route2) % 26
 	letter = connections[1][index]
-	print(letter)
+	print("After rotor 2: " + letter)
 	return letter
 
 def rotor3(letter, startPoint, first, forward):
@@ -48,7 +48,7 @@ def rotor3(letter, startPoint, first, forward):
 	index = connections[0].index(letter)
 	index = (index - route3) % 26
 	letter = connections[1][index]
-	print(letter)
+	print("After rotor 3: " + letter)
 	return letter
 
 def rotor4(letter):
@@ -62,7 +62,7 @@ def rotor4(letter):
 	index = connections[0].index(letter)
 	index = (index - route4) % 26
 	letter = connections[1][index]
-	print(letter)
+	print("After rotor 4: " + letter)
 	return letter
 
 def rotor5(letter):
@@ -76,7 +76,7 @@ def rotor5(letter):
 	index = connections[0].index(letter)
 	index = (index - route5) % 26
 	letter = connections[1][index]
-	print(letter)
+	print("After rotor 5: " + letter)
 	return letter
 
 def rotor6(letter):
@@ -90,7 +90,7 @@ def rotor6(letter):
 	index = connections[0].index(letter)
 	index = (index - route6) % 26
 	letter = connections[1][index]
-	print(letter)
+	print("After rotor 6: " + letter)
 	return letter
 
 def rotor7(letter):
@@ -104,7 +104,7 @@ def rotor7(letter):
 	index = connections[0].index(letter)
 	index = (index - route7) % 26
 	letter = connections[1][index]
-	print(letter)
+	print("After rotor 7:" + letter)
 	return letter
 
 def rotor8(letter):
@@ -118,7 +118,7 @@ def rotor8(letter):
 	index = connections[0].index(letter)
 	index = (index - route8) % 26
 	letter = connections[1][index]
-	print(letter)
+	print("After rotor 8: " + letter)
 	return letter
 
 def rotorBeta(letter):
@@ -132,7 +132,7 @@ def rotorBeta(letter):
 	index = connections[0].index(letter)
 	index = (index - routeBeta) % 26
 	letter = connections[1][index]
-	print(letter)
+	print("After rotor beta: " + letter)
 	return letter			   
    
 	
@@ -147,7 +147,7 @@ def rotorGamma(letter):
 	index = connections[0].index(letter)
 	index = (index - routeGamma) % 26
 	letter = connections[1][index]
-	print(letter)
+	print("After rotor gamma: " + letter)
 	return letter 
 	
 def reflectorB(letter):
@@ -155,7 +155,7 @@ def reflectorB(letter):
 				   ['Y', 'R', 'U', 'H', 'Q', 'S', 'L', 'P', 'X', 'N', 'O', 'Z', 'W', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J', 'K', 'M', 'T', 'V']]
 	index = connections[0].index(letter)
 	letter = connections[1][index]
-	print(letter)
+	print("After reflector B: " + letter)
 	return letter 
 
 def reflectorC(letter):
@@ -163,7 +163,7 @@ def reflectorC(letter):
 				   ['F', 'V', 'P', 'J', 'I', 'O', 'Y', 'R', 'Z', 'X', 'W', 'Q', 'U', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J', 'K', 'M', 'T', 'V']]
 	index = connections[0].index(letter)
 	letter = connections[1][index]
-	print(letter)
+	print("After reflector C: " + letter)
 	return letter 
 
 def plugboardSetup():
@@ -183,34 +183,44 @@ def plugboardSetup():
 def rotorSetup():
 	list = []
 	setup = []
+	rotorNames = []
 	options = ["1", "2", "3"]
 	for i in range(0, 3):
 		list.append(input("rotor {}: ".format(options[i])))
 	for j in range(0, 3):
 		if list[j] == '1':
 			setup.append(rotor1)
+			rotorNames.append('1')
 		elif list[j] == '2':
 			setup.append(rotor2)
+			rotorNames.append('2')
 		elif list[j] == '3':
 			setup.append(rotor3)
+			rotorNames.append('3')
 		elif list[j] == '4':
 			setup.append(rotor4)
+			rotorNames.append('4')
 		elif list[j] == '5':
 			setup.append(rotor5)
+			rotorNames.append('5')
 		elif list[j] == '6':
 			setup.append(rotor6)
+			rotorNames.append('6')
 		elif list[j] == '7':
 			setup.append(rotor7)
+			rotorNames.append('7')
 		elif list[j] == '8':
 			setup.append(rotor8)
+			rotorNames.append('8')
 		elif list[j] == "Beta":
 			setup.append(rotorBeta)
+			rotorNames.append("Beta")
 		elif list[j] == "Gamma":
 			setup.append(rotorGamma)
+			rotorNames.append("Gamma")
 	startPoints = []
 	for k in range(0, 3):
-		startPoints.append(input("rotor {}, Start Point: ".format(setup)))
-	#package = [setup, startPoints]
+		startPoints.append(input("rotor {}, Start Point: ".format(rotorNames[k])))
 	return setup, startPoints
 	
 def reflectorSetup():
@@ -225,7 +235,7 @@ def encryption(letter, setup, startPoints, reflector, plugboard, first):
 	if letter in plugboard[0] or letter in plugboard[1]:
 		index = plugboard[0].index(letter)
 		letter = plugboard[1][index]
-	print(letter)
+	print("After plugboard: " + letter)
 	z = 0
 	for rotor in setup:
 		letter = rotor(letter, startPoints[z], first, True)
@@ -236,7 +246,7 @@ def encryption(letter, setup, startPoints, reflector, plugboard, first):
 	if letter in plugboard[0] or letter in plugboard[1]:
 		index = plugboard[0].index(letter)
 		letter = plugboard[1][index]
-	print(letter)
+	print("Final encryption: " + letter)
 	
 def main():
 	first = True
@@ -246,7 +256,7 @@ def main():
 	startPoints = rotorSet[1]
 	reflector = reflectorSetup()
 	while True:
-		letter = input("Letter?")
+		letter = input("Letter: ")
 		encryption(letter, setup, startPoints, reflector, plugboard, first)
 		first = False
 	return
