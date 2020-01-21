@@ -1,6 +1,13 @@
 route1 = 0
 route2 = 0
 route3 = 0
+route4 = 0
+route5 = 0
+route6 = 0
+route7 = 0
+route8 = 0
+routeBeta = 0
+routeGamma = 0
 
 def rotor1(letter, startPoint, first, forward):
 	global route1
@@ -45,62 +52,100 @@ def rotor3(letter, startPoint, first, forward):
 	return letter
 
 def rotor4(letter):
+	global route4
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['E', 'S', 'O', 'V', 'P', 'Z', 'J', 'A', 'Y', 'Q', 'U', 'I', 'R', 'H', 'X', 'L', 'N', 'F', 'T', 'G', 'K', 'D', 'C', 'M', 'W', 'B']]
 	if startPoint is not None and first:
-		route = connections[0].index(startPoint)
-	route +=1
+		route4 = connections[0].index(startPoint)
+	if forward:
+		route4 = route4 + 1
 	index = connections[0].index(letter)
-	index = (index - route) % 26
+	index = (index - route4) % 26
 	letter = connections[1][index]
 	print(letter)
 	return letter
 
 def rotor5(letter):
+	global route5
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['V', 'Z', 'B', 'R', 'G', 'I', 'T', 'Y', 'U', 'P', 'S', 'D', 'N', 'H', 'L', 'X', 'A', 'W', 'M', 'J', 'Q', 'O', 'F', 'E', 'C', 'K']]
+	if startPoint is not None and first:
+		route5 = connections[0].index(startPoint)
+	if forward:
+		route5 = route5 + 1
 	index = connections[0].index(letter)
+	index = (index - route5) % 26
 	letter = connections[1][index]
 	print(letter)
 	return letter
 
 def rotor6(letter):
+	global route6
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['J', 'P', 'G', 'V', 'O', 'U', 'M', 'F', 'Y', 'Q', 'B', 'E', 'N', 'H', 'Z', 'R', 'D', 'K', 'A', 'S', 'X', 'L', 'I', 'C', 'T', 'W']]
+	if startPoint is not None and first:
+		route6 = connections[0].index(startPoint)
+	if forward:
+		route6 = route6 + 1
 	index = connections[0].index(letter)
+	index = (index - route6) % 26
 	letter = connections[1][index]
 	print(letter)
 	return letter
 
 def rotor7(letter):
+	global route7
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['N', 'Z', 'J', 'H', 'G', 'R', 'C', 'X', 'M', 'Y', 'S', 'W', 'B', 'O', 'U', 'F', 'A', 'I', 'V', 'L', 'P', 'E', 'K', 'Q', 'D', 'T']]
+	if startPoint is not None and first:
+		route7 = connections[0].index(startPoint)
+	if forward:
+		route7 = route7 + 1
 	index = connections[0].index(letter)
+	index = (index - route7) % 26
 	letter = connections[1][index]
 	print(letter)
 	return letter
 
 def rotor8(letter):
+	global route8
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['F', 'K', 'Q', 'H', 'T', 'L', 'X', 'O', 'C', 'B', 'J', 'S', 'P', 'D', 'Z', 'R', 'A', 'M', 'E', 'W', 'N', 'I', 'U', 'Y', 'G', 'V']]
+	if startPoint is not None and first:
+		route8 = connections[0].index(startPoint)
+	if forward:
+		route8 = route8 + 1
 	index = connections[0].index(letter)
+	index = (index - route8) % 26
 	letter = connections[1][index]
 	print(letter)
 	return letter
 
 def rotorBeta(letter):
+	global routeBeta
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['L', 'E', 'Y', 'J', 'V', 'C', 'N', 'I', 'X', 'W', 'P', 'B', 'Q', 'M', 'D', 'R', 'T', 'A', 'K', 'Z', 'G', 'F', 'U', 'H', 'O', 'S']]
+	if startPoint is not None and first:
+		routeBeta = connections[0].index(startPoint)
+	if forward:
+		routeBeta = routeBeta + 1
 	index = connections[0].index(letter)
+	index = (index - routeBeta) % 26
 	letter = connections[1][index]
 	print(letter)
 	return letter			   
    
 	
 def rotorGamma(letter):
+	global routeGamma
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['F', 'S', 'O', 'K', 'A', 'N', 'U', 'E', 'R', 'H', 'M', 'B', 'T', 'I', 'Y', 'C', 'W', 'L', 'Q', 'P', 'Z', 'X', 'V', 'G', 'J', 'D']]
+	if startPoint is not None and first:
+		routeGamma = connections[0].index(startPoint)
+	if forward:
+		routeGamma = routeGamma + 1
 	index = connections[0].index(letter)
+	index = (index - routeGamma) % 26
 	letter = connections[1][index]
 	print(letter)
 	return letter 
