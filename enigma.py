@@ -51,7 +51,7 @@ def rotor3(letter, startPoint, first, forward):
 	print("After rotor 3: " + letter)
 	return letter
 
-def rotor4(letter):
+def rotor4(letter, startPoint, first, forward):
 	global route4
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['E', 'S', 'O', 'V', 'P', 'Z', 'J', 'A', 'Y', 'Q', 'U', 'I', 'R', 'H', 'X', 'L', 'N', 'F', 'T', 'G', 'K', 'D', 'C', 'M', 'W', 'B']]
@@ -65,7 +65,7 @@ def rotor4(letter):
 	print("After rotor 4: " + letter)
 	return letter
 
-def rotor5(letter):
+def rotor5(letter, startPoint, first, forward):
 	global route5
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['V', 'Z', 'B', 'R', 'G', 'I', 'T', 'Y', 'U', 'P', 'S', 'D', 'N', 'H', 'L', 'X', 'A', 'W', 'M', 'J', 'Q', 'O', 'F', 'E', 'C', 'K']]
@@ -79,7 +79,7 @@ def rotor5(letter):
 	print("After rotor 5: " + letter)
 	return letter
 
-def rotor6(letter):
+def rotor6(letter, startPoint, first, forward):
 	global route6
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['J', 'P', 'G', 'V', 'O', 'U', 'M', 'F', 'Y', 'Q', 'B', 'E', 'N', 'H', 'Z', 'R', 'D', 'K', 'A', 'S', 'X', 'L', 'I', 'C', 'T', 'W']]
@@ -93,7 +93,7 @@ def rotor6(letter):
 	print("After rotor 6: " + letter)
 	return letter
 
-def rotor7(letter):
+def rotor7(letter, startPoint, first, forward):
 	global route7
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['N', 'Z', 'J', 'H', 'G', 'R', 'C', 'X', 'M', 'Y', 'S', 'W', 'B', 'O', 'U', 'F', 'A', 'I', 'V', 'L', 'P', 'E', 'K', 'Q', 'D', 'T']]
@@ -104,10 +104,10 @@ def rotor7(letter):
 	index = connections[0].index(letter)
 	index = (index - route7) % 26
 	letter = connections[1][index]
-	print("After rotor 7:" + letter)
+	print("After rotor 7: " + letter)
 	return letter
 
-def rotor8(letter):
+def rotor8(letter, startPoint, first, forward):
 	global route8
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['F', 'K', 'Q', 'H', 'T', 'L', 'X', 'O', 'C', 'B', 'J', 'S', 'P', 'D', 'Z', 'R', 'A', 'M', 'E', 'W', 'N', 'I', 'U', 'Y', 'G', 'V']]
@@ -121,7 +121,7 @@ def rotor8(letter):
 	print("After rotor 8: " + letter)
 	return letter
 
-def rotorBeta(letter):
+def rotorBeta(letter, startPoint, first, forward):
 	global routeBeta
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['L', 'E', 'Y', 'J', 'V', 'C', 'N', 'I', 'X', 'W', 'P', 'B', 'Q', 'M', 'D', 'R', 'T', 'A', 'K', 'Z', 'G', 'F', 'U', 'H', 'O', 'S']]
@@ -136,7 +136,7 @@ def rotorBeta(letter):
 	return letter			   
    
 	
-def rotorGamma(letter):
+def rotorGamma(letter, startPoint, first, forward):
 	global routeGamma
 	connections = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 				   ['F', 'S', 'O', 'K', 'A', 'N', 'U', 'E', 'R', 'H', 'M', 'B', 'T', 'I', 'Y', 'C', 'W', 'L', 'Q', 'P', 'Z', 'X', 'V', 'G', 'J', 'D']]
