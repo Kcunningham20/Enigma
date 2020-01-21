@@ -212,10 +212,10 @@ def rotorSetup():
 		elif list[j] == '8':
 			setup.append(rotor8)
 			rotorNames.append('8')
-		elif list[j] == "Beta":
+		elif list[j].lower() == "beta":
 			setup.append(rotorBeta)
 			rotorNames.append("Beta")
-		elif list[j] == "Gamma":
+		elif list[j].lower() == "gamma":
 			setup.append(rotorGamma)
 			rotorNames.append("Gamma")
 	startPoints = []
@@ -225,9 +225,9 @@ def rotorSetup():
 	
 def reflectorSetup():
 	reflector = input("reflector: ")
-	if reflector == 'B':
+	if reflector.upper() == 'B':
 		reflector = reflectorB
-	elif reflector == 'C':
+	elif reflector.upper() == 'C':
 		reflector = reflectorC
 	return reflector
 	
@@ -247,7 +247,7 @@ def encryption(letter, setup, startPoints, reflector, plugboard, first):
 	letter = reflector(letter)
 	for rotor in setup[::-1]:
 		letter = rotor(letter, None, None, False)
-		
+
 	if letter in plugboard[0]:
 		index = plugboard[0].index(letter)
 		letter = plugboard[1][index]
